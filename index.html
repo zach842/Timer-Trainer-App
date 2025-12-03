@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9mm Dry-Fire Trainer</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0bb395" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>9mm Dry-Fire Trainer</h1>
+    <p class="subtitle">Concealed-carry routine • Dry-fire only</p>
+  </header>
+
+  <nav class="tabs" aria-label="Main sections">
+    <button class="tab active" data-target="safety">Safety</button>
+    <button class="tab" data-target="routine">Routine</button>
+    <button class="tab" data-target="checklist">Checklist</button>
+  </nav>
+
+  <main>
+    <!-- SAFETY -->
+    <section id="safety" class="panel active" aria-label="Safety">
+      <h2>Safety First</h2>
+      <p class="warn">This is for <strong>dry-fire only</strong>. It does not replace professional instruction.</p>
+      <ul class="bullet-list">
+        <li>Treat every firearm as if it’s loaded, even in dry-fire.</li>
+        <li>Clear the gun physically and visually: magazine out, chamber &amp; mag well inspected.</li>
+        <li>Remove all live ammunition from the room before starting.</li>
+        <li>Always point in a safe direction with a solid backstop.</li>
+        <li>Finger off the trigger until you are ready to press.</li>
+        <li>Use snap-caps / dummy rounds if your firearm manufacturer recommends them.</li>
+        <li>Train in a space with no interruptions; post a “Do Not Enter” sign if needed.</li>
+        <li>If you discover live ammo in the training space, <strong>stop immediately</strong> and re-clear.</li>
+      </ul>
+
+      <h3>Quick Gear Check</h3>
+      <ul class="bullet-list">
+        <li>9mm pistol (magazine removed, chamber clear).</li>
+        <li>Holster &amp; belt you actually use for carry.</li>
+        <li>Snap-caps / dummy rounds (recommended).</li>
+        <li>Safe wall / backstop, no glass or people behind it.</li>
+        <li>Everyday carry clothing layers (shirt, jacket, hoodie, etc.).</li>
+        <li>Timer/phone + something to take quick notes.</li>
+      </ul>
+    </section>
+
+    <!-- ROUTINE -->
+    <section id="routine" class="panel" aria-label="Routine">
+      <h2>Warm-Up (5–7 min)</h2>
+      <ol class="number-list">
+        <li><strong>Clear &amp; confirm:</strong> magazine out, chamber visually &amp; physically clear. Say it out loud.</li>
+        <li><strong>Table draws:</strong> slow draws 3× per hand (no trigger press yet).</li>
+        <li><strong>Grip &amp; press:</strong> gun pointed at safe backstop, 5 slow trigger presses with full reset.</li>
+      </ol>
+
+      <h2>Drills (slow → fast)</h2>
+
+      <article class="drill">
+        <h3>Drill 1 — Static Presentation + Press</h3>
+        <p class="tagline">Foundation: consistent grip &amp; smooth press.</p>
+        <p><strong>Clothing:</strong> plain T-shirt.</p>
+        <ul class="bullet-list">
+          <li>Start holstered, normal stance.</li>
+          <li>On the beep: draw to full presentation, sights on target spot.</li>
+          <li>Press trigger once (snap-cap or confirmed empty), smooth surprise break.</li>
+          <li>Reholster slowly and deliberately.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 5 sets × 5 reps (30–60s rest).</p>
+        <div class="timer-block" data-drill="1">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="drill">
+        <h3>Drill 2 — Garment Defeat (Layered Shirts)</h3>
+        <p class="tagline">Work the clothing you actually wear.</p>
+        <p><strong>Clothing:</strong> T-shirt + button-up or light jacket.</p>
+        <ul class="bullet-list">
+          <li>Start holstered, cover garment closed as you normally wear it.</li>
+          <li>On the beep: clear garment with your normal motion, draw, present, press once.</li>
+          <li>Reholster under full control.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 6 sets × 4 reps.</p>
+        <div class="timer-block" data-drill="2">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="drill">
+        <h3>Drill 3 — Concealment &amp; Retention (IWB/AIWB)</h3>
+        <p class="tagline">Tight concealment draw, close-quarters friendly.</p>
+        <p><strong>Clothing:</strong> snug shirt over IWB/AIWB holster.</p>
+        <ul class="bullet-list">
+          <li>Hands relaxed at sides.</li>
+          <li>On the beep: clear shirt, draw from concealment, present, press once.</li>
+          <li>Finger stays indexed until gun is on target and you deliberately choose to press.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 6 sets × 4 reps.</p>
+        <div class="timer-block" data-drill="3">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="drill">
+        <h3>Drill 4 — One-Hand Presentation &amp; Press</h3>
+        <p class="tagline">Prepare for injured or occupied support hand.</p>
+        <ul class="bullet-list">
+          <li>Draw using strong hand only, present, press once, reholster carefully.</li>
+          <li>Optional: repeat with support hand only if you are trained to do so.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 4 sets × 4 reps each hand.</p>
+        <div class="timer-block" data-drill="4">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="drill">
+        <h3>Drill 5 — Speed Press (Draw → Press → Reholster)</h3>
+        <p class="tagline">Add speed without losing control.</p>
+        <ul class="bullet-list">
+          <li>On the beep: draw, present, one deliberate press, reholster.</li>
+          <li>Use a timer to gradually reduce your draw-to-press time.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 8 sets × 3 reps (20–40s rest).</p>
+        <div class="timer-block" data-drill="5">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="drill">
+        <h3>Drill 6 — Stress-Inoculation (Optional)</h3>
+        <p class="tagline">Mild stress, same safety standards.</p>
+        <ul class="bullet-list">
+          <li>Add a simple movement (step, pivot, or stand from a chair) before the draw.</li>
+          <li>Have a partner call “Draw” at random intervals (partner never points a gun at you).</li>
+          <li>Draw, present, press once, reholster.</li>
+        </ul>
+        <p class="reps"><strong>Reps:</strong> 4 sets × 3 reps.</p>
+        <div class="timer-block" data-drill="6">
+          <div class="timer-label">Rest timer</div>
+          <div class="timer-display" data-timer-display>Ready</div>
+          <div class="timer-controls">
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="30">Start 30s</button>
+            <button class="timer-btn" type="button" data-timer-btn data-seconds="60">Start 60s</button>
+            <button class="timer-btn secondary" type="button" data-timer-reset>Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <h2>What to Watch For</h2>
+      <ul class="bullet-list">
+        <li>Muzzle always in a safe direction, even when clearing garments.</li>
+        <li>Finger indexed along the frame until the sights are on target and you choose to press.</li>
+        <li>Same grip every time, full contact on the backstrap.</li>
+        <li>Smooth trigger press straight to the rear, no yanking.</li>
+        <li>Slow, deliberate reholstering with your eyes on the holster.</li>
+      </ul>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section id="checklist" class="panel" aria-label="Checklist">
+      <h2>Session Checklist</h2>
+      <p>Use this as a quick run sheet while you practice.</p>
+
+      <div class="checklist-group">
+        <h3>Before You Start</h3>
+        <label class="check-item">
+          <input type="checkbox" data-check="before-ammo" /> All live ammo removed from room
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="before-clear" /> Pistol cleared: mag out, chamber inspected
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="before-backstop" /> Safe backstop selected
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="before-gear" /> Holster &amp; normal carry clothes on
+        </label>
+      </div>
+
+      <div class="checklist-group">
+        <h3>Warm-Up</h3>
+        <label class="check-item">
+          <input type="checkbox" data-check="warmup-draws" /> 3× slow table draws per hand
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="warmup-presses" /> 5× slow trigger presses to confirm feel
+        </label>
+      </div>
+
+      <div class="checklist-group">
+        <h3>Drills Completed</h3>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-1" /> Drill 1 — Static Presentation
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-2" /> Drill 2 — Garment Defeat
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-3" /> Drill 3 — IWB/AIWB
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-4" /> Drill 4 — One-Hand
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-5" /> Drill 5 — Speed Press
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="drill-6" /> Drill 6 — Stress (if used)
+        </label>
+      </div>
+
+      <div class="checklist-group">
+        <h3>After Session</h3>
+        <label class="check-item">
+          <input type="checkbox" data-check="after-clear" /> Firearm cleared again &amp; stored safely
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="after-room" /> Room checked for live ammo before normal use resumes
+        </label>
+        <label class="check-item">
+          <input type="checkbox" data-check="after-notes" /> 1 win &amp; 1 thing to fix written down
+        </label>
+      </div>
+
+      <button class="clear-checklist" type="button">Clear checklist</button>
+
+      <p class="small-note">
+        Tip: Your checklist is saved on this device. Clearing browser data may reset it.
+      </p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Dry-fire only • Always follow the 4 universal firearm safety rules.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
