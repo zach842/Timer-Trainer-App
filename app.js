@@ -13,7 +13,76 @@ tabs.forEach(tab => {
   });
 });
 
-// Simple per-drill timers (one active at a time)
+// ---- Session length planner ----
+let sessionTimer = null;
+let sessionStart = null;
+let sessionDuration = null; // in seconds
+
+const statusEl = document.querySelector('[data-session-status]');
+const remainingEl = document.querySelector('[data-session-remaining]');
+const barEl = document.querySelector('[data-session-bar]');
+
+function formatSessionTime(sec) {
+  if (sec <= 0) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+function clearSessionTimer() {
+  if (sessionTimer) {
+    clearInterval(sessionTimer);
+    sessionTimer = null;
+  }
+  sessionStart = null;
+  sessionDuration = null;
+  if (statusEl) statusEl.textContent = 'No session selected';
+  if (remainingEl) remainingEl.textContent = '';
+  if (barEl) barEl.style.width = '0%';
+}
+
+function startSession(minutes) {
+  const secs = minutes * 60;
+  sessionDuration = secs;
+  sessionStart = Date.now();
+  if (sessionTimer) clearInterval(sessionTimer);
+
+  if (statusEl) statusEl.textContent = `Session running: ${minutes} min`;
+
+  const tick = () => {
+    if (!sessionStart || !sessionDuration) return;
+    const elapsedMs = Date.now() - sessionStart;
+    const elapsed = Math.floor(elapsedMs / 1000);
+    const remaining = Math.max(sessionDuration - elapsed, 0);
+    const ratio = Math.min(elapsed / sessionDuration, 1);
+    if (remainingEl) remainingEl.textContent = formatSessionTime(remaining) + ' left';
+    if (barEl) barEl.style.width = (ratio * 100).toFixed(1) + '%';
+    if (remaining <= 0) {
+      clearInterval(sessionTimer);
+      sessionTimer = null;
+      if (statusEl) statusEl.textContent = 'Session complete';
+    }
+  };
+
+  tick();
+  sessionTimer = setInterval(tick, 1000);
+}
+
+document.querySelectorAll('[data-session-min]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const mins = parseInt(btn.dataset.sessionMin || '15', 10);
+    startSession(mins);
+  });
+});
+
+const resetSessionBtn = document.querySelector('[data-session-reset]');
+if (resetSessionBtn) {
+  resetSessionBtn.addEventListener('click', () => {
+    clearSessionTimer();
+  });
+}
+
+// ---- Per-drill timers (one active at a time) ----
 let activeTimer = null;
 
 function formatSeconds(s) {
@@ -73,7 +142,7 @@ document.querySelectorAll('[data-timer-reset]').forEach(btn => {
   });
 });
 
-// Checklist persistence with localStorage
+// ---- Checklist persistence with localStorage ----
 const CHECKLIST_KEY = 'dry-fire-checklist-v1';
 
 function saveChecklist() {

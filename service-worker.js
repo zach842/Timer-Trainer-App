@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'dry-fire-pwa-v2';
+const CACHE_NAME = 'dry-fire-pwa-v3';
 const ASSETS = [
   './',
   './index.html',

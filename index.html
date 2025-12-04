@@ -49,6 +49,27 @@
 
     <!-- ROUTINE -->
     <section id="routine" class="panel" aria-label="Routine">
+      <section class="session-card" aria-label="Session planner">
+        <h2>Session plan</h2>
+        <p class="session-text">Pick a total session length and let the bar show roughly how far through you are.</p>
+        <div class="session-buttons">
+          <button class="session-btn" type="button" data-session-min="10">10 min</button>
+          <button class="session-btn" type="button" data-session-min="15">15 min</button>
+          <button class="session-btn" type="button" data-session-min="20">20 min</button>
+          <button class="session-btn" type="button" data-session-min="30">30 min</button>
+        </div>
+        <div class="session-status-row">
+          <span class="session-status" data-session-status>No session selected</span>
+          <span class="session-remaining" data-session-remaining></span>
+        </div>
+        <div class="session-bar-wrap">
+          <div class="session-bar-bg">
+            <div class="session-bar-fill" data-session-bar></div>
+          </div>
+        </div>
+        <button class="session-btn secondary full" type="button" data-session-reset>Reset session</button>
+      </section>
+
       <h2>Warm-Up (5–7 min)</h2>
       <ol class="number-list">
         <li><strong>Clear &amp; confirm:</strong> magazine out, chamber visually &amp; physically clear. Say it out loud.</li>
